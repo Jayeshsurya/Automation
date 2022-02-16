@@ -16,16 +16,14 @@ public class BrowserTest {
 	@Test
 	public void getData()
 	{
-		System.out.println("Hello Guys");
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
-		driver.get("https://rahylshettyacademy.azurewebsites.net/webapp/");
-		String text =driver.findElement(By.cssSelector("h1")).getText();
+		WebElement firsttext=driver.findElement(By.xpath("//body/h1[2]"));
+		System.out.println("Hello Guys, I am launching automation test cases");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		driver.get("https://jksuryawanshi.azurewebsites.net/webapp/");
+		String text =firsttext.getText();
 		System.out.println(text);
-		Assert.assertTrue(text.equalsIgnoreCase("RahulShettyAcademy.com Learning"));
+		Assert.assertTrue(text.equalsIgnoreCase("This is the first change done"));
 		driver.close();
-	
-		
-		
 	}
 }
